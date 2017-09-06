@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import {
   StyleSheet,
-  Text,
-  View,
-  Button
+  AppRegistry,
 } from 'react-native';
 import { DrawerNavigator, StackNavigator } from 'react-navigation';
 
@@ -12,7 +10,6 @@ import Register from './src/components/Auth/Register'
 import Profile from './src/components/Profile/Profile'
 import SideNav from './src/components/SideNav'
 import Session from './src/components/Session/Session'
-
 // import ShowProfile from './src/components/Profile/ShowProfile'
 import Message from './src/components/Session/Message'
 // import Sensor from './src/components/Sensor/Sensor'
@@ -36,62 +33,27 @@ const styles = StyleSheet.create({
   },
 });
 
-const App = (props)  => {
-  const { navigate } = props.navigation;
+class AndroidTest extends Component {
 
-  return (
-    <View style={styles.container}>
-      <Text style={styles.welcome}>
-        Welcome to React Native Navigation Sample!
-      </Text>
-      <Text style={styles.instructions}>
-        To get started, edit index.ios.js
-      </Text>
-      <Text style={styles.instructions}>
-        Press Cmd+R to reload,{'\n'}
-        Cmd+D or shake for dev menu
-      </Text>
-      <Button
-          onPress={() => navigate('Message')}
-          title="Go to Message Screen"
-        />
-    </View>
-  );
+  render(){
+    const { navigation } = this.props;
+
+    return (
+      <App navigation={ navigation }/>
+    );
+
+  }
 }
 
-const drawerNavigation = DrawerNavigator({
-  Tabs: {
-    screen: Session
-  }
-}, {
-  // Register custom drawer component
-  contentComponent: props => <SideNav {...props} />
-})
+const SimpleApp = DrawerNavigator({
+  // Home: { screen: Register },
+  Message: { screen: Message },
+  // Profile: { screen: Profile},
+  // Login: { screen: Login},
+  // Session: { screen: Session},
 
-export default StackNavigator({
-  // Login: {
-  //   screen: Login
-  // },
-  Register: {
-    screen: Register
-  },
-  // Profile: {
-  //   screen: Profile
-  // },
-  // ShowProfile: {
-  //   screen: ShowProfile
-  // },
-  // Sensor: {
-  //   screen: Sensor
-  // },
-  // Message: {
-  //   screen: Message
-  // },
-  DrawerNavigation: {
-    screen: drawerNavigation
-  }
-}, {
-  headerMode: 'none'
-})
+});
 
-// export default App
+AppRegistry.registerComponent('AndroidTest', () => SimpleApp);
+
+export default SimpleApp

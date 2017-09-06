@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Text, View, Image, StatusBar, Switch } from 'react-native'
-// import styles from '../styles/styles.js'
+import styles from '../styles/styles.js'
 import DrawerButton from '../DrawerButton'
 
 export default class Session extends Component {

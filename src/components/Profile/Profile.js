@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Text, View, TouchableOpacity, StatusBar, ScrollView } from 'react-native'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
-// import styles from '../styles/styles.js'
+import styles from '../styles/styles.js'
 import firebase from '../Firebase/firebase'
 import t from 'tcomb-form-native'
 import moment from 'moment'
