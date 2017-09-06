@@ -27,9 +27,9 @@ export default class SideNav extends Component {
           <Text style={styles.sideNavText}>{profileIcon}   Edit Profile</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => navigate('Sensor')}>
+        {/* <TouchableOpacity onPress={() => navigate('Sensor')}>
           <Text style={styles.sideNavText}>{sensorIcon}   Sensor</Text>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
 
         <TouchableOpacity onPress={() => navigate('Settings')}>
           <Text style={styles.sideNavText}>{settingsIcon}   Settings</Text>
