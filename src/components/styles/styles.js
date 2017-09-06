@@ -1,11 +1,10 @@
 import { StyleSheet } from 'react-native'
-// import { Constants } from 'expo'
 
 module.exports = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#6ed3cf',
-    // paddingTop: Constants.statusBarHeight
+    paddingTop: 20
   },
   logoContainer: {
     flexGrow: 1,
@@ -13,8 +12,8 @@ module.exports = StyleSheet.create({
     justifyContent: 'center'
   },
   logo: {
-    width: 80,
-    height: 80
+    width: 120,
+    height: 120
   },
   title: {
     fontSize: 20,
@@ -51,7 +50,7 @@ module.exports = StyleSheet.create({
   sideNavContainer: {
     flex: 1,
     paddingLeft: 20,
-    // paddingTop: Constants.statusBarHeight,
+    paddingTop: 20,
     backgroundColor: '#e1e8f0'
   },
   sideNavText: {
@@ -81,5 +80,34 @@ module.exports = StyleSheet.create({
     backgroundColor: '#66CCCC',
     alignItems: 'center',
     justifyContent: 'center'
+  },
+  bangText: {
+    fontSize: 25,
+    fontWeight: '700',
+    color: 'red'
+  },
+  impactContainer: {
+    flex: 1,
+    backgroundColor: '#e62739',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  impactTimer: {
+    width: 200,
+    height: 200,
+    borderRadius: 200/2,
+    backgroundColor: 'white',
+    overflow: 'hidden',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  impactTitle: {
+    fontSize: 30,
+    fontWeight: '700',
+    marginVertical: 20
+  },
+  impactText: {
+    fontSize: 80,
+    fontWeight: '700'
   }
 })

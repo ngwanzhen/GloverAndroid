@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, View, Image, StatusBar, Switch } from 'react-native'
+import { Text, View, Image, StatusBar, Switch, TouchableOpacity } from 'react-native'
 import styles from '../styles/styles.js'
 import DrawerButton from '../DrawerButton'
 
@@ -16,6 +16,7 @@ export default class Session extends Component {
     let containerStyle = this.state.value ? styles.endSessionContainer : styles.startSessionContainer
     let bgImage = this.state.value ? require('../../images/cyclist.gif') : require('../../images/bicycle.gif')
     let content = this.state.value ? 'End This Session?' : 'Start New Session?'
+    let bangDisplay = this.state.value ? 'flex' : 'none'
 
     return (
       <View style={containerStyle}>
@@ -37,6 +38,12 @@ export default class Session extends Component {
             onValueChange={(value) => this.setState({value})}
           />
         </View>
+
+        <TouchableOpacity
+          style={{ zIndex: 1, display: bangDisplay }}
+          onPress={() => navigate('Impact')}>
+          <Text style={styles.bangText}>   BANG!</Text>
+        </TouchableOpacity>
       </View>
     )
   }
