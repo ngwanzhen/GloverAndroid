@@ -20,35 +20,35 @@ export const Tabs = TabNavigator({
     screen: Register,
     navigationOptions: {
       tabBarLabel: 'Register',
-      tabBarIcon: ({ tintColor }) => <Icon name="list" size={35} color={tintColor} />,
+      tabBarIcon: ({ tintColor }) => <Icon name="assignment-ind" size={35} color={tintColor} />,
     },
   },
   Login: {
     screen: Login,
     navigationOptions: {
       tabBarLabel: 'Login',
-      tabBarIcon: ({ tintColor }) => <Icon name="list" size={35} color={tintColor} />,
+      tabBarIcon: ({ tintColor }) => <Icon name="fingerprint" size={35} color={tintColor} />,
     },
   },
   Message: {
     screen: Message,
     navigationOptions: {
       tabBarLabel: 'Message',
-      tabBarIcon: ({ tintColor }) => <Icon name="list" size={35} color={tintColor} />,
+      tabBarIcon: ({ tintColor }) => <Icon name="record-voice-over" size={35} color={tintColor} />,
     },
   },
   Session: {
     screen: Session,
     navigationOptions: {
       tabBarLabel: 'Session',
-      tabBarIcon: ({ tintColor }) => <Icon name="list" size={35} color={tintColor} />,
+      tabBarIcon: ({ tintColor }) => <Icon name="motorcycle" size={35} color={tintColor} />,
     },
   },
   Profile: {
     screen: Profile,
     navigationOptions: {
       tabBarLabel: 'Profile',
-      tabBarIcon: ({ tintColor }) => <Icon name="list" size={35} color={tintColor} />,
+      tabBarIcon: ({ tintColor }) => <Icon name="face" size={35} color={tintColor} />,
     },
   }
 });
