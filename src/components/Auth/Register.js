@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Text, View, Image, KeyboardAvoidingView, TextInput, TouchableOpacity, StatusBar } from 'react-native'
-// import styles from '../styles/styles.js'
+import styles from '../styles/styles.js'
 import firebase from '../Firebase/firebase'
 
 export default class Register extends Component {

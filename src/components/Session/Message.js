@@ -16,25 +16,41 @@ import {
 var SmsAndroid = require('react-native-sms-android');
 // import SmsAndroid from 'react-native-sms-android';
 
-// const sendSMSFunction = SmsAndroid.sms(
-//   '+65 9819 9862', // phone number to send sms to
-//   'This is the direct text', // sms body
-//   'sendDirect', // sendDirect or sendIndirect
-//   (err, message) => {
-//   if (err){
-//     console.log("error");
-//   } else {
-//     console.log(message); // callback message
-//   }
-//   }
-//   );
+const sendSMSFunction = SmsAndroid.sms(
+  '+65 9819 9862', // phone number to send sms to
+  'This is the direct text', // sms body
+  'sendDirect', // sendDirect or sendIndirect
+  (err, message) => {
+  if (err){
+    console.log("error");
+  } else {
+    console.log(message); // callback message
+  }
+  }
+  );
 
 const Message = ()  => {
     return (
       <View style={styles.container}>
-      
+      <TouchableOpacity style={styles.button} onPress={() =>
+            SmsAndroid.sms(
+          '+65 8569 4149', // phone number to send sms to
+          'This is the sms text', // sms body
+          'sendIndirect', // sendDirect or sendIndirect
+          (err, message) => {
+            if (err){
+              console.log("error");
+            } else {
+              console.log(message); // callback message
+            }
+          }
+        )
+      }
+      >
+      <Text>Send SMS</Text>
+       </TouchableOpacity>
         <Text style={styles.welcome}>
-            i hope works!
+            updated?!
         </Text>
         <Text style={styles.instructions}>
           To get started, edit index.android.js
