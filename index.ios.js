@@ -1,20 +1,4 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
+import { AppRegistry } from 'react-native';
+import App from './App';
 
-import React, { Component } from 'react';
-import {
-  AppRegistry,
-} from 'react-native';
-import App from './App'
-
-const AndroidTest = () => {
-  return (
-    <App />
-  );
-}
-
-
-AppRegistry.registerComponent('AndroidTest', () => AndroidTest);
+AppRegistry.registerComponent('AndroidTest', () => App);

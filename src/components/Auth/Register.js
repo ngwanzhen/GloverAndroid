@@ -72,13 +72,3 @@ export default class Register extends Component {
     )
   }
 }
-
-Register.navigationOptions = {
-  drawer: {
-      icon: () => (
-        <Image
-          source={require('../imgs/home.png')}
-          style={[styles.tabIcon, {tintColor: 'black'}]}
-        />
-  )}
-};
