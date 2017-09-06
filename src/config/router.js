@@ -12,7 +12,7 @@ import Profile from '../components/Profile/Profile'
 // import SideNav from '../components/SideNav'
 import Session from '../components/Session/Session'
 // import ShowProfile from '../components/Profile/ShowProfile'
-import Message from '../components/Session/Message'
+import Impact from '../components/Session/Message'
 // import Sensor from '../components/Sensor/Sensor'
 
 export const Tabs = TabNavigator({
@@ -30,10 +30,10 @@ export const Tabs = TabNavigator({
       tabBarIcon: ({ tintColor }) => <Icon name="fingerprint" size={35} color={tintColor} />,
     },
   },
-  Message: {
-    screen: Message,
+  Impact: {
+    screen: Impact,
     navigationOptions: {
-      tabBarLabel: 'Message',
+      tabBarLabel: 'Impact',
       tabBarIcon: ({ tintColor }) => <Icon name="record-voice-over" size={35} color={tintColor} />,
     },
   },
