@@ -96,8 +96,11 @@ What did you use to build it, list the technologies, plugins, gems, packages etc
 
 ## Acknowledgments
 
-* SMS
+* To enable direct SMS (not just re-direct you to the SMS function with pre-filled msg)
 https://github.com/rhaker/react-native-sms-android
 
-* React-navigation guide
+* React-navigation that gives you the router and nav bar
 https://github.com/spencercarli/getting-started-react-navigation/blob/master/app/config/router.js
+
+* React-native maps that gives you the ability to see where you are on google maps
+https://github.com/airbnb/react-native-maps

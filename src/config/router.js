@@ -13,6 +13,7 @@ import Profile from '../components/Profile/Profile'
 import Session from '../components/Session/Session'
 // import ShowProfile from '../components/Profile/ShowProfile'
 import Impact from '../components/Session/Message'
+import Map from '../components/Map/Map'
 // import Sensor from '../components/Sensor/Sensor'
 
 export const Tabs = TabNavigator({
@@ -35,6 +36,13 @@ export const Tabs = TabNavigator({
     navigationOptions: {
       tabBarLabel: 'Impact',
       tabBarIcon: ({ tintColor }) => <Icon name="record-voice-over" size={35} color={tintColor} />,
+    },
+  },
+  Map: {
+    screen: Map,
+    navigationOptions: {
+      tabBarLabel: 'Map',
+      tabBarIcon: ({ tintColor }) => <Icon name="list" size={35} color={tintColor} />,
     },
   },
   Session: {

@@ -44,8 +44,6 @@ class Impact extends Component {
   }
 }
 
-
-
 const Message = ()  => {
             SmsAndroid.sms(
           '+65 8569 4149', // phone number to send sms to

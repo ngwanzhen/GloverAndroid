@@ -3535,6 +3535,10 @@ react-native-keyboard-aware-scroll-view@^0.3.0:
     prop-types "^15.5.10"
     react-timer-mixin "^0.13.3"
 
+react-native-maps@^0.16.3:
+  version "0.16.3"
+  resolved "https://registry.yarnpkg.com/react-native-maps/-/react-native-maps-0.16.3.tgz#c061b78a9cca83b814efcf56006cc90020f720f7"
+
 react-native-side-menu@^1.0.2:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/react-native-side-menu/-/react-native-side-menu-1.1.0.tgz#a10a0e4c45896df53029c662c3b36b98b9d01aac"
