@@ -113,12 +113,16 @@ module.exports = StyleSheet.create({
   mapContainer: {
     ...StyleSheet.absoluteFillObject,
     flex: 1,
-    height: 200,
+    height: 400,
     width: 400,
     justifyContent: 'center',
     alignItems: 'center'
   },
   map: {
-    ...StyleSheet.absoluteFillObject
+    ...StyleSheet.absoluteFillObject,
+    top: 100
+  },
+  profileContainer: {
+    top: 60
   }
 })

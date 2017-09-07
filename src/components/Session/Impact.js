@@ -27,7 +27,7 @@ export default class Impact extends Component {
       clearInterval(this.timer)
       this.props.navigation.goBack()
     } else if (this.state.seconds === 0) {
-      this.props.navigation.navigate('Profile')
+      this.props.navigation.navigate('profileWDrawer')
     }
   }
 

@@ -71,7 +71,7 @@ export default class CreateProfile extends Component {
       rootRef.child('emergencyContactName').set(value.emergencyContactName)
       rootRef.child('emergencyContactNumber').set(value.emergencyContactNumber)
 
-      .then(() => this.props.navigation.navigate('Session'))
+      .then(() => this.props.navigation.navigate('sessionWDrawer'))
     }
   }
 

@@ -23,13 +23,13 @@ export default class SideNav extends Component {
 
   render () {
     const {navigate} = this.props.navigation
-    const backAction = NavigationActions.back({})
+    // const backAction = NavigationActions.back({})
     return (
       <View style={styles.sideNavContainer}>
 
-        <TouchableOpacity onPress={() => this.props.navigation.dispatch(backAction)}>
-          <Text style={styles.sideNavText}>{drawerIcon}   </Text>
-        </TouchableOpacity>
+        {/* <TouchableOpacity onPress={() => this.props.navigation.dispatch(backAction)}>
+          {/* <Text style={styles.sideNavText}>{drawerIcon}   </Text>
+        </TouchableOpacity> */}
 
         {/* <TouchableOpacity onPress={() => navigate('Profile')}>
           <Text style={styles.sideNavText}>{profileIcon}   Show Profile</Text>
@@ -43,7 +43,7 @@ export default class SideNav extends Component {
           <Text style={styles.sideNavText}>{settingsIcon}   Settings</Text>
         </TouchableOpacity>*/}
 
-        <TouchableOpacity onPress={() => navigate('Session')}>
+        <TouchableOpacity onPress={() => navigate('sessionWDrawer')}>
           <Text style={styles.sideNavText}>{sessionIcon}   Start Session</Text>
         </TouchableOpacity>
 

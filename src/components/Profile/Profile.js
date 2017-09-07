@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, View, Platform } from 'react-native'
+import { Text, View, Platform, StatusBar } from 'react-native'
 import styles from '../styles/styles.js'
 import MapView from 'react-native-maps'
 import DrawerButton from '../DrawerButton'
@@ -100,8 +100,14 @@ export default class Profile extends Component {
     const { region } = this.props
     return (
       <View style={styles.container}>
+        <DrawerButton onPress={() => navigate('DrawerOpen')} />
+        <StatusBar barStyle='dark-content' />
+
+        <View style={styles.profileContainer}>
+          <Text>Hello</Text>
+        </View>
+
         <View style={styles.mapContainer}>
-          <DrawerButton onPress={() => navigate('DrawerOpen')} />
           <MapView
             style={styles.map}
             region={this.state.region}
@@ -112,7 +118,6 @@ export default class Profile extends Component {
           />
           </MapView>
         </View>
-        <Text>{this.state.region.latitude}</Text>
       </View>
     )
   }
