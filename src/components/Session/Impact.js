@@ -2,6 +2,19 @@ import React, { Component } from 'react'
 import { Text, View, Switch, Platform } from 'react-native'
 import SmsAndroid from 'react-native-sms-android'
 import styles from '../styles/styles.js'
+import firebase from '../Firebase/firebase'
+
+var userData
+
+firebase.auth().onAuthStateChanged(function (user) {
+  if (user) {
+    var uid = firebase.auth().currentUser.uid
+    var rootRef = firebase.database().ref(`users/${uid}`)
+    rootRef.once('value').then(function (snapshot) {
+      userData = snapshot.val()
+    })
+  }
+})
 
 export default class Impact extends Component {
   constructor (props) {
@@ -58,8 +71,8 @@ export default class Impact extends Component {
 
 const Message = () => {
   SmsAndroid.sms(
-    '+65 8569 4149', // phone number to send sms to
-    'This is the sms text', // sms body
+    `+65 ${userData.emergencyContactNumber}`, // phone number to send sms to
+    `DANGER! ${userData.name} had an accident. Blood Type: ${userData.bloodType}, Allergy: ${userData.allergy}`, // sms body
     'sendDirect', // sendDirect or sendIndirect
     (err, message) => {
       if (err) {

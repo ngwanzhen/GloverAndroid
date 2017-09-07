@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Text, View, TouchableOpacity, StatusBar, ScrollView, StyleSheet } from 'react-native'
-import MapView from 'react-native-maps';
+import MapView from 'react-native-maps'
 
 const styles = StyleSheet.create({
   container: {
