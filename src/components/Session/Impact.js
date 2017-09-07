@@ -42,6 +42,9 @@ export default class Impact extends Component {
       this.props.navigation.goBack()
     } else if (this.state.seconds === 0 && Platform.OS === 'android') {
       Message()
+      this.props.navigation.navigate('Profile')
+    } else if (this.state.seconds === 0 && Platform.OS === 'ios') {
+      this.props.navigation.navigate('Profile')
     }
   }
 
