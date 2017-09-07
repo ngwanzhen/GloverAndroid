@@ -12,6 +12,9 @@ import com.facebook.soloader.SoLoader;
 
 import com.rhaker.reactnativesmsandroid.RNSmsAndroidPackage;
 
+import com.slowpath.hockeyapp.RNHockeyAppModule;
+import com.slowpath.hockeyapp.RNHockeyAppPackage;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -26,6 +29,7 @@ public class MainApplication extends Application implements ReactApplication {
     @Override
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
+          new RNHockeyAppPackage(MainApplication.this),
           new RNSmsAndroidPackage(),
           new MainReactPackage(),
             new MapsPackage(),
