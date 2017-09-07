@@ -22,18 +22,18 @@ const drawerNavigation = DrawerNavigator({
 
 // ***UNHIDE WHEN READY TO DEPLOY*** this registers all the possible screens in the stack (drawer nav is added as a screen which is imported from sidenav page)
 export const Screens = StackNavigator({
-  // Login: {
-  //   screen: Login
-  // },
-  // Register: {
-  //   screen: Register
-  // },
-  // CreateProfile: {
-  //   screen: CreateProfile
-  // },
-  // Impact: {
-  //   screen: Impact
-  // },
+  Login: {
+    screen: Login
+  },
+  Register: {
+    screen: Register
+  },
+  CreateProfile: {
+    screen: CreateProfile
+  },
+  Impact: {
+    screen: Impact
+  },
   Profile: {
     screen: Profile
   },

@@ -5,7 +5,7 @@ import firebase from './Firebase/firebase'
 import { NavigationActions } from 'react-navigation'
 
 import Icon from 'react-native-vector-icons/FontAwesome'
-const profileIcon = (<Icon name='user-circle-o' size={20} color='#2d7394' />)
+// const profileIcon = (<Icon name='user-circle-o' size={20} color='#2d7394' />)
 // const sensorIcon = (<Icon name='unlink' size={20} color='#2d7394' />)
 // const settingsIcon = (<Icon name='cog' size={20} color='#2d7394' />)
 const sessionIcon = (<Icon name='motorcycle' size={20} color='#2d7394' />)
@@ -31,9 +31,9 @@ export default class SideNav extends Component {
           <Text style={styles.sideNavText}>{drawerIcon}   </Text>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => navigate('Profile')}>
+        {/* <TouchableOpacity onPress={() => navigate('Profile')}>
           <Text style={styles.sideNavText}>{profileIcon}   Show Profile</Text>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
 
         {/* <TouchableOpacity onPress={() => navigate('Sensor')}>
           <Text style={styles.sideNavText}>{sensorIcon}   Sensor</Text>

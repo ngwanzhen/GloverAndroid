@@ -37,14 +37,14 @@ export default class Profile extends Component {
     }
   }
 
-  message (latitude, longitude) {
-<<<<<<< HEAD
-=======
-    alert('hello')
->>>>>>> f618fde
+  iosMessage () {
     if (Platform.OS === 'ios') {
       alert('Message can\'t be sent on ios!')
-    } else {
+    }
+  }
+
+  androidMessage (latitude, longitude) {
+    if (Platform.OS === 'android') {
       SmsAndroid.sms(
         `+65 ${userData.emergencyContactNumber}`, // phone number to send sms to
         `${userData.name} had an accident! Blood Type: ${userData.bloodType}, Allergy: ${userData.allergy}, Location: http://www.google.com/maps/place/${latitude}+${longitude}`, // sms body
@@ -71,10 +71,7 @@ export default class Profile extends Component {
             longitudeDelta: LONGITUDE_DELTA
           }
         })
-<<<<<<< HEAD
-        this.message(this.state.region.latitude, this.state.region.longitude)
-=======
->>>>>>> f618fde
+        this.iosMessage()
       },
       (error) => console.log(error.message),
       { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 }
@@ -89,10 +86,7 @@ export default class Profile extends Component {
             longitudeDelta: LONGITUDE_DELTA
           }
         })
-<<<<<<< HEAD
-=======
-        this.message(this.state.region.latitude, this.state.region.longitude)
->>>>>>> f618fde
+        this.androidMessage(this.state.region.latitude, this.state.region.longitude)
       }
     )
   }
@@ -104,7 +98,6 @@ export default class Profile extends Component {
   render () {
     const { navigate } = this.props.navigation
     const { region } = this.props
-
     return (
       <View style={styles.container}>
         <View style={styles.mapContainer}>
