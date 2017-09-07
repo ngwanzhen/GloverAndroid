@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, View, Switch } from 'react-native'
+import { Text, View, StatusBar, Switch } from 'react-native'
 import styles from '../styles/styles.js'
 
 export default class Impact extends Component {
@@ -34,6 +34,7 @@ export default class Impact extends Component {
   render () {
     return (
       <View style={styles.impactContainer}>
+        <StatusBar barStyle='light-content' />
         <Text style={styles.impactTitle}>
           IMPACT DETECTED
         </Text>
@@ -41,13 +42,13 @@ export default class Impact extends Component {
           <Text style={styles.impactText}>{this.state.seconds}</Text>
         </View>
 
-        <View style={{flexDirection: 'row', zIndex: 1, marginVertical: 10}}>
+        <View style={{flexDirection: 'row', zIndex: 1, marginVertical: 40}}>
           <Text style={styles.header}>
             Dismiss?
           </Text>
           <Switch
             style={{ marginLeft: 10 }}
-            onTintColor={'#66CCCC'}
+            onTintColor={'#10377a'}
             thumbTintColor={'white'}
             value={this.state.value}
             onValueChange={(value) => this.setState({value})}

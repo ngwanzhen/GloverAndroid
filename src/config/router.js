@@ -22,27 +22,27 @@ const drawerNavigation = DrawerNavigator({
 
 // ***UNHIDE WHEN READY TO DEPLOY*** this registers all the possible screens in the stack (drawer nav is added as a screen which is imported from sidenav page)
 export const Screens = StackNavigator({
-  Login: {
-    screen: Login
-  },
-  Register: {
-    screen: Register
-  },
-  CreateProfile: {
-    screen: CreateProfile
-  },
-  Impact: {
-    screen: Impact
-  },
+  // Login: {
+  //   screen: Login
+  // },
+  // Register: {
+  //   screen: Register
+  // },
+  // CreateProfile: {
+  //   screen: CreateProfile
+  // },
+  // Impact: {
+  //   screen: Impact
+  // },
   Profile: {
     screen: Profile
   },
-  Session: {
-    screen: Session
-  },
-  DrawerNavigation: {
-    screen: drawerNavigation
-  }
+  // Session: {
+  //   screen: Session
+  // },
+  // DrawerNavigation: {
+  //   screen: drawerNavigation
+  // }
 },
 // this removes the default header (which lets u go back etc. but leaves a white row)
   {

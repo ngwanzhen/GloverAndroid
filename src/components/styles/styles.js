@@ -93,9 +93,9 @@ module.exports = StyleSheet.create({
     justifyContent: 'center'
   },
   impactTimer: {
-    width: 200,
-    height: 200,
-    borderRadius: 200/2,
+    width: 180,
+    height: 180,
+    borderRadius: 180/2,
     backgroundColor: 'white',
     overflow: 'hidden',
     alignItems: 'center',
@@ -104,7 +104,7 @@ module.exports = StyleSheet.create({
   impactTitle: {
     fontSize: 30,
     fontWeight: '700',
-    marginVertical: 20
+    marginVertical: 50
   },
   impactText: {
     fontSize: 80,
