@@ -35,7 +35,7 @@ react-native run-android
 Deployed onto hockeyapp, link can shared by invitation
 
 ### ERDs
-![alt text](./imgs/erd.png?raw=true 'start')
+![alt text](./imgs/ERD.png?raw=true 'start')
 
 ### User stories
 * User should be able to register and log-in subsequently
