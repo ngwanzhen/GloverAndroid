@@ -1,6 +1,6 @@
 # ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project #4: Project Name
 
-*** NAME *** is a collision detection device + phone app that will notify your loved ones on your location when you're our cycling, skiing or even driving. The device should be attached somewhere that may sense the impact and this triggers your phone to send out an SMS to your designated emergency contact with your location and other health related details like blood type and allergies.
+Glover is a collision detection device + phone app that will notify your loved ones on your location when you're our cycling, skiing or even driving. The device should be attached somewhere that may sense the impact and this triggers your phone to send out an SMS to your designated emergency contact with your location and other health related details like blood type and allergies.
 
 This project makes use of:
 
@@ -15,8 +15,8 @@ Software
 * React Native
 * Bluetooth library to pair with hardware
 * GPS library
+* Native geolocation
 * Communications library to send SMS
-* Contacts API to access phone contacts (Expo)
 
 ## Getting Started
 
@@ -24,52 +24,15 @@ Provide instructions here about how to get your project running on our local mac
 
 ### Prerequisites
 
-What is needed to install and run the project, how do we install them
-
-```
-Code example
-```
-
 ### How to Use
-
-A step by step guide on how to install and use the project, for example if this is a game, how do we play it.
-
-
-```
-Code example
-```
-
-More steps...
-
-```
-until finished
-```
-
-
-## Tests
-
-Did you write automated tests? If so, how do we run them.
-
-
-```
-Code example
-```
 
 ## Live Version
 
-Where is this deployed online (github pages, heroku etc), give us the link and any access details we need.
-
-## Built With
-
-What did you use to build it, list the technologies, plugins, gems, packages etc.
-
-* [jQuery](http://jquery.com/) - jQuery for example is something you likely used
-
-## Workflow
+Deployed onto hockeyapp
+Link by invitation
 
 ### ERDs
 
-### Flowchart
 
 ### User stories
 * User should be able to register and log-in subsequently
@@ -107,3 +70,10 @@ https://github.com/airbnb/react-native-maps
 
 * Incorporating geolocation (native) to pinpoint current location
 https://medium.com/@kswanie21/react-native-google-map-with-react-native-maps-572e3d3eee14
+
+* Deployment to HockeyApp for beta testing
+https://github.com/benloopcompany/react-native-hockeyapp
+
+* Tutorials for IOT
+http://www.instructables.com/id/How-to-Receive-Arduino-Sensor-Data-on-Your-Android/
+https://learn.sparkfun.com/tutorials/piezo-vibration-sensor-hookup-guide

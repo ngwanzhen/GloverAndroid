@@ -3,6 +3,7 @@ package com.androidtest;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.testfairy.react.TestFairyPackage;
 import com.rhaker.reactnativesmsandroid.RNSmsAndroidPackage;
 import com.airbnb.android.react.maps.MapsPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
@@ -10,6 +11,9 @@ import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
+
+import com.slowpath.hockeyapp.RNHockeyAppModule;
+import com.slowpath.hockeyapp.RNHockeyAppPackage;
 
 import java.util.Arrays;
 import java.util.List;
@@ -25,7 +29,9 @@ public class MainApplication extends Application implements ReactApplication {
     @Override
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
-          new MainReactPackage(),
+            new RNHockeyAppPackage(MainApplication.this),
+            new MainReactPackage(),
+            new TestFairyPackage(),
             new VectorIconsPackage(),
             new RNSmsAndroidPackage(),
             new MapsPackage()
