@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import { Tabs } from './src/config/router'
+import { Screens } from './src/config/router'
 
 class App extends Component {
-  render() {
+  render () {
     return <Screens />
   }
 }
