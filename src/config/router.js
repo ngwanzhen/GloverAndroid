@@ -15,7 +15,6 @@ const sessionWDrawer = DrawerNavigator({
   }
 },
   {
-  // Register custom drawer component from sideNav
     contentComponent: props => <SideNav {...props} />
   })
 
@@ -25,7 +24,6 @@ const profileWDrawer = DrawerNavigator({
   }
 },
   {
-  // Register custom drawer component from sideNav
     contentComponent: props => <SideNav {...props} />
   })
 

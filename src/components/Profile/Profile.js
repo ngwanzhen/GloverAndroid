@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, View, Platform, StatusBar } from 'react-native'
+import { Text, View, Platform, StatusBar, Image } from 'react-native'
 import styles from '../styles/styles.js'
 import MapView from 'react-native-maps'
 import DrawerButton from '../DrawerButton'
@@ -99,14 +99,23 @@ export default class Profile extends Component {
     const { navigate } = this.props.navigation
     const { region } = this.props
     return (
-      <View style={styles.container}>
+      <View style={styles.profileContainer}>
+        <StatusBar barStyle='light-content' />
         <DrawerButton onPress={() => navigate('DrawerOpen')} />
-        <StatusBar barStyle='dark-content' />
 
-        <View style={styles.profileContainer}>
-          <Text>Hello</Text>
+        <Image source={require('../../images/ambulance.gif')} style={styles.ambulanceLogo} />
+
+        <View>
+          <Text style={styles.titleBar}>Profile</Text>
+          <Text style={{paddingLeft: 10, backgroundColor: '#EAEAEA'}}>
+            {'\n'}Name: {userData.name}{'\n'}
+            {'\n'}Blood Type: {userData.bloodType}{'\n'}
+            {'\n'}Allergy: {userData.allergy}{'\n'}
+            {'\n'}Emergency Contact Name: {userData.emergencyContactName}{'\n'}
+            {'\n'}Emergency Contact Number: {userData.emergencyContactNumber}{'\n'}
+          </Text>
+          <Text style={styles.titleBar}>Location</Text>
         </View>
-
         <View style={styles.mapContainer}>
           <MapView
             style={styles.map}
