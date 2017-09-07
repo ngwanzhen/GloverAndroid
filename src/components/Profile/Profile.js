@@ -38,6 +38,10 @@ export default class Profile extends Component {
   }
 
   message (latitude, longitude) {
+<<<<<<< HEAD
+=======
+    alert('hello')
+>>>>>>> f618fde
     if (Platform.OS === 'ios') {
       alert('Message can\'t be sent on ios!')
     } else {
@@ -67,7 +71,10 @@ export default class Profile extends Component {
             longitudeDelta: LONGITUDE_DELTA
           }
         })
+<<<<<<< HEAD
         this.message(this.state.region.latitude, this.state.region.longitude)
+=======
+>>>>>>> f618fde
       },
       (error) => console.log(error.message),
       { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 }
@@ -82,6 +89,10 @@ export default class Profile extends Component {
             longitudeDelta: LONGITUDE_DELTA
           }
         })
+<<<<<<< HEAD
+=======
+        this.message(this.state.region.latitude, this.state.region.longitude)
+>>>>>>> f618fde
       }
     )
   }
