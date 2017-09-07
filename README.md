@@ -27,16 +27,15 @@ To see a working version of the mobile app, you will need
 2. Yarn install
 3. Run react-native start
 4. If your android and iOS environment is setup correctly, simply run
-react-native run-ios or
+react-native run-ios OR
 react-native run-android
 
 ## Live Version
 
-Deployed onto hockeyapp
-Link by invitation
+Deployed onto hockeyapp, link can shared by invitation
 
 ### ERDs
-![alt text](imgs/erd.png?raw=true 'start')
+![alt text](./imgs/erd.png?raw=true 'start')
 
 ### User stories
 * User should be able to register and log-in subsequently
