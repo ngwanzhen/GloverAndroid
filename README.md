@@ -19,12 +19,16 @@ Software
 * Communications library to send SMS
 
 ## Getting Started
+To see a working version of the mobile app, you will need
+* Android Studio + emulator
+* xCode for iphone
 
-Provide instructions here about how to get your project running on our local machine. Do we just need to clone and open a certain file or do we need to install anything first.
-
-### Prerequisites
-
-### How to Use
+1. Download the codes from this repo
+2. Yarn install
+3. Run react-native start
+4. If your android and iOS environment is setup correctly, simply run
+react-native run-ios or
+react-native run-android
 
 ## Live Version
 
@@ -32,7 +36,7 @@ Deployed onto hockeyapp
 Link by invitation
 
 ### ERDs
-
+![alt text](imgs/erd.png?raw=true 'start')
 
 ### User stories
 * User should be able to register and log-in subsequently
@@ -45,12 +49,18 @@ Link by invitation
 1. How to prompt user to pair bluetooth and switch on GPS upon 'start ride session'?
 2. Will locked phone disable sending SMS?
 3. Will app running in background continually sense location coordinate and receive bluetooth data?
+4. iOS doesn't seem to allow apps to send messages without prompting users to click 'send'
 
 ### Future Plans
-1. Live-tracking of location & time to enable live updates to emergency contacts even without crash event. This will also enable app to double up as a 'run-keeper' for cyclists, skiiers, motorists or even joggers.
-2. Implmentation of accelerometer for increased accuracy
-3. 'Forget Password' feature
-4. Provide settings page to enable users to amend emergency contact details, personal details like allergies, health status
+1. Pairing of IOT! And deployment to playstore
+2. Live-tracking of location & time to enable live updates to emergency contacts even without crash event. This will also enable app to double up as a 'run-keeper' for cyclists, skiiers, motorists or even joggers.
+3. Implmentation of accelerometer for increased accuracy
+4. 'Forget Password' feature
+5. Provide settings page to enable users to amend emergency contact details, personal details like allergies, health status
+
+### Bugs
+* Keyboard is blocking login / register page (android)
+* needs double click to close drawer
 
 ## Authors
 
