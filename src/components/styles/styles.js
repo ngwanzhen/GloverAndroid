@@ -16,7 +16,7 @@ module.exports = StyleSheet.create({
     height: 120
   },
   title: {
-    fontSize: 20,
+    fontSize: 30,
     fontWeight: '700',
     marginVertical: 20
   },
@@ -109,5 +109,16 @@ module.exports = StyleSheet.create({
   impactText: {
     fontSize: 80,
     fontWeight: '700'
+  },
+  mapContainer: {
+    ...StyleSheet.absoluteFillObject,
+    flex: 1,
+    height: 200,
+    width: 400,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  map: {
+    ...StyleSheet.absoluteFillObject
   }
 })

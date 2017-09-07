@@ -30,7 +30,7 @@ export default class Register extends Component {
           <View style={styles.logoContainer}>
             <Image source={require('../../images/logo.gif')} style={styles.logo} />
             <Text style={styles.title}>
-              Project Title
+              Glover
             </Text>
           </View>
 
