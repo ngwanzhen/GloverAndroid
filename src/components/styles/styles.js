@@ -16,7 +16,7 @@ module.exports = StyleSheet.create({
     height: 120
   },
   title: {
-    fontSize: 20,
+    fontSize: 30,
     fontWeight: '700',
     marginVertical: 20
   },
