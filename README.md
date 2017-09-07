@@ -1,6 +1,6 @@
-# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project #4: Project Name
+# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project #4: Glover
 
-*** NAME *** is a collision detection device + phone app that will notify your loved ones on your location when you're our cycling, skiing or even driving. The device should be attached somewhere that may sense the impact and this triggers your phone to send out an SMS to your designated emergency contact with your location and other health related details like blood type and allergies.
+Glover is a collision detection device + phone app that will notify your loved ones on your location when you're out cycling, skiing or even driving. The device should be attached somewhere that may sense the impact and this triggers your phone to send out an SMS to your designated emergency contact with your location and other health related details like blood type and allergies.
 
 This project makes use of:
 
@@ -15,84 +15,76 @@ Software
 * React Native
 * Bluetooth library to pair with hardware
 * GPS library
+* Native geolocation
 * Communications library to send SMS
-* Contacts API to access phone contacts (Expo)
+
 
 ## Getting Started
 
-Provide instructions here about how to get your project running on our local machine. Do we just need to clone and open a certain file or do we need to install anything first.
+To see a working version of the mobile app, you will need
+* Android Studio + emulator
+* xCode for iphone
 
-### Prerequisites
+1. Download the codes from this repo
+2. Yarn install
+3. Run react-native start
+4. If your android and iOS environment is setup correctly, simply run
+react-native run-ios OR
+react-native run-android
 
-What is needed to install and run the project, how do we install them
-
-```
-Code example
-```
-
-### How to Use
-
-A step by step guide on how to install and use the project, for example if this is a game, how do we play it.
-
-
-```
-Code example
-```
-
-More steps...
-
-```
-until finished
-```
-
-
-## Tests
-
-Did you write automated tests? If so, how do we run them.
-
-
-```
-Code example
-```
 
 ## Live Version
 
-Where is this deployed online (github pages, heroku etc), give us the link and any access details we need.
+Deployed onto hockeyapp, link can be shared by invitation
 
-## Built With
 
-What did you use to build it, list the technologies, plugins, gems, packages etc.
+## ERD
 
-* [jQuery](http://jquery.com/) - jQuery for example is something you likely used
+![alt text](./src/images/ERD.png?raw=true 'start')
 
-## Workflow
 
-### ERDs
+## Wireframe
+<img src="src/images/1Home.png" height="400">
+<img src="src/images/2CreateProfilePage.png" height="400">
+<img src="src/images/3Sensor.png" height="400">
+<img src="src/images/4NewSession.png" height="400">
+<img src="src/images/5ImpactDetected.png" height="400">
+<img src="src/images/6Setting.png" height="400">
 
-### Flowchart
 
-### User stories
+
+
+## User stories
+
 * User should be able to register and log-in subsequently
 * Registration page will prompt users to key in health details and emergency contacts from phone
 * Logged-in users should be able to start session that will trigger pairing of bluetooth device for crash detection and turn on GPS for location sensing
 * Upon collision, app will start a 30 seconds countdown that users can dismiss if false-alarm triggered by a bump on the road or a minor accident.
-* If user is in a serious accident and is unable to dismiss the countdown, the app will then automatically send out a message to designated contacts with info on location and previously provided health details.
+* If user is in a serious accident and is unable to dismiss the countdown, the app will then automatically send out a message to designated contacts with information on location and previously provided health details.
 
-### Challenges
+
+## Challenges
+
 1. How to prompt user to pair bluetooth and switch on GPS upon 'start ride session'?
 2. Will locked phone disable sending SMS?
 3. Will app running in background continually sense location coordinate and receive bluetooth data?
+4. iOS doesn't seem to allow apps to send messages without prompting users to click 'send'
 
-### Future Plans
-1. Live-tracking of location & time to enable live updates to emergency contacts even without crash event. This will also enable app to double up as a 'run-keeper' for cyclists, skiiers, motorists or even joggers.
-2. Implmentation of accelerometer for increased accuracy
-3. 'Forget Password' feature
-4. Provide settings page to enable users to amend emergency contact details, personal details like allergies, health status
+
+## Future Plans
+
+1. Pairing of IOT! And deployment to Play Store
+2. Live-tracking of location & time to enable live updates to emergency contacts even without crash event. This will also enable app to double up as a 'run-keeper' for cyclists, skiiers, motorists or even joggers.
+3. Implementation of accelerometer for increased accuracy
+4. 'Forget Password' feature
+5. Provide settings page to enable users to amend emergency contact details, personal details like allergies, health status
+
 
 ## Authors
 
 * **Wan Zhen** - [thecodingdog](https://github.com/thecodingdog)
 * **Shumin** - [shumin13](https://github.com/shumin13)
+
 
 ## Acknowledgments
 
@@ -107,3 +99,10 @@ https://github.com/airbnb/react-native-maps
 
 * Incorporating geolocation (native) to pinpoint current location
 https://medium.com/@kswanie21/react-native-google-map-with-react-native-maps-572e3d3eee14
+
+* Deployment to HockeyApp for beta testing
+https://github.com/benloopcompany/react-native-hockeyapp
+
+* Tutorials for IOT
+http://www.instructables.com/id/How-to-Receive-Arduino-Sensor-Data-on-Your-Android/
+https://learn.sparkfun.com/tutorials/piezo-vibration-sensor-hookup-guide
