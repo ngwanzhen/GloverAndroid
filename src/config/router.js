@@ -11,15 +11,18 @@ import Impact from '../components/Session/Impact'
 import Map from '../components/Map/Map'
 // import Sensor from '../components/Sensor/Sensor'
 
+//imports the options from SideNav
 const drawerNavigation = DrawerNavigator({
-  Tabs: {
-    screen: Session
-  }
-}, {
-  // Register custom drawer component
+  SideNav: {
+    screen: SideNav
+  },
+},
+{
+  // Register custom drawer component from sideNav
   contentComponent: props => <SideNav {...props} />
 })
 
+//***UNHIDE WHEN READY TO DEPLOY*** this registers all the possible screens in the stack (drawer nav is added as a screen which is imported from sidenav page)
 export const Tabs = StackNavigator({
   Login: {
     screen: Login
@@ -30,60 +33,21 @@ export const Tabs = StackNavigator({
   Profile: {
     screen: Profile
   },
-  DrawerNavigation: {
-    screen: drawerNavigation
-  },
   Impact: {
     screen: Impact
   },
   Map: {
     screen: Map
+  },
+  Session: {
+    screen: Session
+  },
+  DrawerNavigation: {
+    screen: drawerNavigation
   }
-}, {
+},
+//this removes the default header (which lets u go back etc. but leaves a white row)
+{
   headerMode: 'none'
-})
-
-// export const Tabs = TabNavigator({
-//   Register: {
-//     screen: Register,
-//     navigationOptions: {
-//       tabBarLabel: 'Register',
-//       tabBarIcon: ({ tintColor }) => <Icon name="assignment-ind" size={35} color={tintColor} />,
-//     },
-//   },
-//   Login: {
-//     screen: Login,
-//     navigationOptions: {
-//       tabBarLabel: 'Login',
-//       tabBarIcon: ({ tintColor }) => <Icon name="fingerprint" size={35} color={tintColor} />,
-//     },
-//   },
-//   Impact: {
-//     screen: Impact,
-//     navigationOptions: {
-//       tabBarLabel: 'Impact',
-//       tabBarIcon: ({ tintColor }) => <Icon name="record-voice-over" size={35} color={tintColor} />,
-//     },
-//   },
-//   Session: {
-//     screen: Session,
-//     navigationOptions: {
-//       tabBarLabel: 'Session',
-//       tabBarIcon: ({ tintColor }) => <Icon name="motorcycle" size={35} color={tintColor} />,
-//     },
-//   },
-//   Profile: {
-//     screen: Profile,
-//     navigationOptions: {
-//       tabBarLabel: 'Profile',
-//       tabBarIcon: ({ tintColor }) => <Icon name="face" size={35} color={tintColor} />,
-//     },
-//   },
-//   Map: {
-//     screen: Map,
-//     navigationOptions: {
-//       tabBarLabel: 'Map',
-//       tabBarIcon: ({ tintColor }) => <Icon name="list" size={35} color={tintColor} />,
-//     },
-//   },
-// });
+}
+)

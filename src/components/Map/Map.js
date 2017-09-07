@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Text, View, TouchableOpacity, StatusBar, ScrollView, StyleSheet } from 'react-native'
 import MapView from 'react-native-maps'
+import DrawerButton from '../DrawerButton'
 
 const styles = StyleSheet.create({
   container: {
@@ -68,11 +69,13 @@ componentWillUnmount() {
 }
 
   render () {
+    const { navigate } = this.props.navigation
     const { region } = this.props;
         console.log(region);
 
         return (
           <View style ={styles.container}>
+          <DrawerButton onPress={() => navigate('DrawerOpen')} />
             <MapView
               style={styles.map}
               region={ this.state.region }

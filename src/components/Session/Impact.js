@@ -40,6 +40,7 @@ export default class Impact extends Component {
     if (this.state.seconds === 0 && Platform.OS === 'android') {
       Message()
     }
+    // if (this.state.value) navigate ('Session')
   }
 
   render () {
