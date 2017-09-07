@@ -26,7 +26,7 @@ export default class Impact extends Component {
   }
 
   componentDidMount () {
-    setInterval(
+    this.timer = setInterval(
       () => {
         if (this.state.seconds > 0) {
           this.setState({seconds: this.state.seconds - 1})
@@ -37,10 +37,12 @@ export default class Impact extends Component {
   }
 
   componentDidUpdate () {
-    if (this.state.seconds === 0 && Platform.OS === 'android') {
+    if (this.state.value === true) {
+      clearInterval(this.timer)
+      this.props.navigation.goBack()
+    } else if (this.state.seconds === 0 && Platform.OS === 'android') {
       Message()
     }
-    // if (this.state.value) navigate ('Session')
   }
 
   render () {
@@ -73,7 +75,7 @@ export default class Impact extends Component {
 const Message = () => {
   SmsAndroid.sms(
     `+65 ${userData.emergencyContactNumber}`, // phone number to send sms to
-    `DANGER! ${userData.name} had an accident. Blood Type: ${userData.bloodType}, Allergy: ${userData.allergy}`, // sms body
+    `${userData.name} had an accident! Blood Type: ${userData.bloodType}, Allergy: ${userData.allergy}`, // sms body
     'sendDirect', // sendDirect or sendIndirect
     (err, message) => {
       if (err) {

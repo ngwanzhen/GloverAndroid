@@ -1,111 +1,91 @@
 import React, { Component } from 'react'
-import { Text, View, TouchableOpacity, StatusBar, ScrollView } from 'react-native'
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
-import styles from '../styles/styles.js'
-import firebase from '../Firebase/firebase'
-import t from 'tcomb-form-native'
-import moment from 'moment'
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
-const userIcon = (<Icon name='face-profile' size={20} />)
+import { Text, View, TouchableOpacity, StatusBar, ScrollView, StyleSheet } from 'react-native'
+import MapView from 'react-native-maps'
+import DrawerButton from '../DrawerButton'
 
-// Material Design Style Underlines
-var _ = require('lodash')
-const stylesheet = _.cloneDeep(t.form.Form.stylesheet)
-stylesheet.textbox.normal.borderWidth = 0
-stylesheet.textbox.error.borderWidth = 0
-stylesheet.textbox.normal.marginBottom = 0
-stylesheet.textbox.error.marginBottom = 0
-stylesheet.textboxView.normal.borderWidth = 0
-stylesheet.textboxView.error.borderWidth = 0
-stylesheet.textboxView.normal.borderRadius = 0
-stylesheet.textboxView.error.borderRadius = 0
-stylesheet.textboxView.normal.borderBottomWidth = 1
-stylesheet.textboxView.error.borderBottomWidth = 1
-stylesheet.textbox.normal.marginBottom = 5
-stylesheet.textbox.error.marginBottom = 5
+const styles = StyleSheet.create({
+  container: {
+    ...StyleSheet.absoluteFillObject,
+    height: 400,
+    width: 400,
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+  },
+  map: {
+    ...StyleSheet.absoluteFillObject,
+  },
+});
 
-var bloodType = t.enums({
-  'O+': 'O+',
-  'O-': 'O-',
-  'A+': 'A+',
-  'A-': 'A-',
-  'B+': 'B+',
-  'B-': 'B-',
-  'AB+': 'AB+',
-  'AB-': 'AB-'
-})
+const LATITUDE = 1.3077426;
+const LONGITUDE = 103.8318502;
+const LATITUDE_DELTA = 0.015;
+const LONGITUDE_DELTA = 0.0121;
 
-var Details = t.struct({
-  name: t.String,
-  // birthday: t.Date,
-  bloodType: bloodType,
-  allergy: t.String,
-  emergencyContactName: t.String,
-  emergencyContactNumber: t.Number
-})
+export default class Profile extends Component {
+  constructor() {
+  super();
 
-var options = {
-  stylesheet: stylesheet,
-  fields: {
-    birthday: {
-      config: {
-        format: (date) => {
-          const formatedDate = moment(date).format('DD MMMM YYYY')
-          return formatedDate
-        }
-      }
+  this.state = {
+    region: {
+      latitude: LATITUDE,
+      longitude: LONGITUDE,
+      latitudeDelta: LATITUDE_DELTA,
+      longitudeDelta: LONGITUDE_DELTA,
     }
-  }
+  };
 }
 
-export default class CreateProfile extends Component {
-  onPress () {
-    var value = this.refs.form.getValue()
-    if (value) {
-      var uid = firebase.auth().currentUser.uid
-      const rootRef = firebase.database().ref(`users/${uid}`)
-      rootRef.child('name').set(value.name)
-      // rootRef.child('birthday').set(value.birthday)
-      rootRef.child('bloodType').set(value.bloodType)
-      rootRef.child('allergy').set(value.allergy)
-      rootRef.child('emergencyContactName').set(value.emergencyContactName)
-      rootRef.child('emergencyContactNumber').set(value.emergencyContactNumber)
-
-      .then(() => this.props.navigation.navigate('DrawerNavigation'))
+componentDidMount() {
+  navigator.geolocation.getCurrentPosition(
+    position => {
+      this.setState({
+        region: {
+          latitude: position.coords.latitude,
+          longitude: position.coords.longitude,
+          latitudeDelta: LATITUDE_DELTA,
+          longitudeDelta: LONGITUDE_DELTA,
+        }
+      });
+    },
+  (error) => console.log(error.message),
+  { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 },
+  );
+  this.watchID = navigator.geolocation.watchPosition(
+    position => {
+      this.setState({
+        region: {
+          latitude: position.coords.latitude,
+          longitude: position.coords.longitude,
+          latitudeDelta: LATITUDE_DELTA,
+          longitudeDelta: LONGITUDE_DELTA,
+        }
+      });
     }
-  }
+  );
+}
+
+componentWillUnmount() {
+  navigator.geolocation.clearWatch(this.watchId);
+}
 
   render () {
-    var Form = t.form.Form
-    return (
+    const { navigate } = this.props.navigation
+    const { region } = this.props;
+        console.log(region);
 
-      <KeyboardAwareScrollView
-        style={{ backgroundColor: '#6ed3cf' }}
-        resetScrollToCoords={{ x: 0, y: 0 }}
-        contentContainerStyle={styles.container}>
-        <ScrollView contentContainerStyle={styles.contentContainer}>
-
-          <View style={styles.container}>
-            <StatusBar barStyle='light-content' />
-
-            <View style={styles.headerContainer}>
-              <Text style={styles.header}>
-                {userIcon} Create Profile
-              </Text>
-            </View>
-
-            <View style={styles.formContainer}>
-              <Form ref='form' type={Details} options={options} />
-
-              <TouchableOpacity onPress={() => this.onPress()} style={styles.buttonContainer}>
-                <Text style={styles.buttonText}>SUBMIT</Text>
-              </TouchableOpacity>
-            </View>
-
+        return (
+          <View style ={styles.container}>
+          <DrawerButton onPress={() => navigate('DrawerOpen')} />
+            <MapView
+              style={styles.map}
+              region={ this.state.region }
+              onRegionChange={ region => this.setState({region}) }
+              onRegionChangeComplete={ region => this.setState({region}) }
+            >
+            <MapView.Marker coordinate={ this.state.region }
+            />
+            </MapView>
           </View>
-
-        </ScrollView>
-      </KeyboardAwareScrollView>
-    )
-  }
-}
+        );
+      }
+    }
