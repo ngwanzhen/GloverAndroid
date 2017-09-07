@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Text, View, Image, KeyboardAvoidingView, TextInput, TouchableOpacity, StatusBar } from 'react-native'
+import { Text, View, Image, TextInput, TouchableOpacity, StatusBar } from 'react-native'
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import styles from '../styles/styles.js'
 import firebase from '../Firebase/firebase'
 
@@ -23,8 +24,11 @@ export default class Register extends Component {
   render () {
     const { navigate } = this.props.navigation
     return (
-      <KeyboardAvoidingView behavior='padding' style={styles.container}>
-        <View style={styles.container}>
+      <KeyboardAwareScrollView
+        style={{ backgroundColor: '#6ed3cf' }}
+        resetScrollToCoords={{ x: 0, y: 0 }}
+        contentContainerStyle={styles.container}
+        scrollEnabled={false}>
           <StatusBar barStyle='light-content' />
 
           <View style={styles.logoContainer}>
@@ -67,8 +71,8 @@ export default class Register extends Component {
 
           </View>
 
-        </View>
-      </KeyboardAvoidingView>
+        </KeyboardAwareScrollView>
+
     )
   }
 }
