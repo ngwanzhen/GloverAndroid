@@ -14,7 +14,7 @@ export default class Register extends Component {
 
   _auth () {
     firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
-    .then(() => this.props.navigation.navigate('Profile'))
+    .then(() => this.props.navigation.navigate('CreateProfile'))
     .catch(function (error) {
       alert(error.message)
     })
