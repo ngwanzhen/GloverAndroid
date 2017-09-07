@@ -3,14 +3,13 @@ package com.androidtest;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.rhaker.reactnativesmsandroid.RNSmsAndroidPackage;
 import com.airbnb.android.react.maps.MapsPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
-
-import com.rhaker.reactnativesmsandroid.RNSmsAndroidPackage;
 
 import java.util.Arrays;
 import java.util.List;
@@ -26,10 +25,10 @@ public class MainApplication extends Application implements ReactApplication {
     @Override
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
-          new RNSmsAndroidPackage(),
           new MainReactPackage(),
-            new MapsPackage(),
-            new VectorIconsPackage()
+            new VectorIconsPackage(),
+            new RNSmsAndroidPackage(),
+            new MapsPackage()
       );
     }
   };
