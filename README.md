@@ -40,12 +40,12 @@ Deployed onto hockeyapp, link can be shared by invitation
 
 ## ERD
 
-![alt text](./src/images/ERD.png?raw=true 'start')
+<img src="src/images/ERD.png">
 
 
 ## Wireframe
-<img src="src/images/1Home.png" height="400"><img src="src/images/2CreateProfilePage.png" height="400"><img src="src/images/3Sensor.png" height="400">
-<img src="src/images/4NewSession.png" height="400"><img src="src/images/5ImpactDetected.png" height="400"><img src="src/images/6Setting.png" height="400">
+
+<img src="src/images/1Home.png" height="400"><img src="src/images/2CreateProfilePage.png" height="400"><img src="src/images/3Sensor.png" height="400"><img src="src/images/4NewSession.png" height="400"><img src="src/images/5ImpactDetected.png" height="400"><img src="src/images/6Setting.png" height="400">
 
 
 ## User Stories
