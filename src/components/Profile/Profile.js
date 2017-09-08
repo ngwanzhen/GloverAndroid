@@ -6,17 +6,17 @@ import DrawerButton from '../DrawerButton'
 import firebase from '../Firebase/firebase'
 import SmsAndroid from 'react-native-sms-android'
 
-var userData
+// var userData
 
-firebase.auth().onAuthStateChanged(function (user) {
-  if (user) {
-    var uid = firebase.auth().currentUser.uid
-    var rootRef = firebase.database().ref(`users/${uid}`)
-    rootRef.once('value').then(function (snapshot) {
-      userData = snapshot.val()
-    })
-  }
-})
+// firebase.auth().onAuthStateChanged(function (user) {
+//   if (user) {
+//     var uid = firebase.auth().currentUser.uid
+//     var rootRef = firebase.database().ref(`users/${uid}`)
+//     rootRef.once('value').then(function (snapshot) {
+//       userData = snapshot.val()
+//     })
+//   }
+// })
 
 const LATITUDE = 1.3077426
 const LONGITUDE = 103.8318502
@@ -45,18 +45,23 @@ export default class Profile extends Component {
 
   androidMessage (latitude, longitude) {
     if (Platform.OS === 'android') {
-      SmsAndroid.sms(
-        `+65 ${userData.emergencyContactNumber}`, // phone number to send sms to
-        `${userData.name} had an accident! Blood Type: ${userData.bloodType}, Allergy: ${userData.allergy}, Location: http://www.google.com/maps/place/${latitude}+${longitude}`, // sms body
-        'sendDirect', // sendDirect or sendIndirect
-        (err, message) => {
-          if (err) {
-            console.log('error')
-          } else {
-            console.log(message) // callback message
+      var uid = firebase.auth().currentUser.uid
+      var rootRef = firebase.database().ref(`users/${uid}`)
+      rootRef.once('value').then(function (snapshot) {
+        var userData = snapshot.val()
+        SmsAndroid.sms(
+          `+65 ${userData.emergencyContactNumber}`, // phone number to send sms to
+          `${userData.name} had an accident! Blood Type: ${userData.bloodType}, Allergy: ${userData.allergy}, Location: http://www.google.com/maps/place/${latitude}+${longitude}`, // sms body
+          'sendDirect', // sendDirect or sendIndirect
+          (err, message) => {
+            if (err) {
+              console.log('error')
+            } else {
+              console.log(message) // callback message
+            }
           }
-        }
-      )
+        )
+      })
     }
   }
 
@@ -106,14 +111,14 @@ export default class Profile extends Component {
         <Image source={require('../../images/ambulance.gif')} style={styles.ambulanceLogo} />
 
         <View>
-          <Text style={styles.titleBar}>Profile</Text>
+          {/* <Text style={styles.titleBar}>Profile</Text>
           <Text style={{paddingLeft: 10, backgroundColor: '#EAEAEA'}}>
             {'\n'}Name: {userData.name}{'\n'}
             {'\n'}Blood Type: {userData.bloodType}{'\n'}
             {'\n'}Allergy: {userData.allergy}{'\n'}
             {'\n'}Emergency Contact Name: {userData.emergencyContactName}{'\n'}
             {'\n'}Emergency Contact Number: {userData.emergencyContactNumber}{'\n'}
-          </Text>
+          </Text> */}
           <Text style={styles.titleBar}>Location</Text>
         </View>
         <View style={styles.mapContainer}>
