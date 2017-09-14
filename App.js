@@ -11,14 +11,14 @@ class App extends Component {
     ]
   }
 
-  componentWillMount () {
-    HockeyApp.configure('a89476c454944d389838875238ca328e', true)
-  }
-
-  componentDidMount () {
-    HockeyApp.start()
-    HockeyApp.checkForUpdate() // optional
-  }
+  // componentWillMount () {
+  //   HockeyApp.configure('a89476c454944d389838875238ca328e', true)
+  // }
+  //
+  // componentDidMount () {
+  //   HockeyApp.start()
+  //   HockeyApp.checkForUpdate() // optional
+  // }
 
   render () {
     return <Screens />
