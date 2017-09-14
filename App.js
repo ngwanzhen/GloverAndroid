@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { Screens } from './src/config/router'
+// const TestFairy = require('react-native-testfairy')
+const HockeyApp = require('react-native-hockeyapp');
 
 var HockeyApp = require('react-native-hockeyapp')
 
