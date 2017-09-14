@@ -3,20 +3,24 @@ import { Screens } from './src/config/router'
 // const TestFairy = require('react-native-testfairy')
 const HockeyApp = require('react-native-hockeyapp');
 
+var HockeyApp = require('react-native-hockeyapp')
+
 class App extends Component {
-
-  componentWillMount() {
-      HockeyApp.configure("80cbdb3c7e6a434fb5b39860a40ee3fe", true);
+  constructor () {
+    super()
+    console.ignoredYellowBox = [
+      'Setting a timer'
+    ]
   }
 
-  componentDidMount() {
-      HockeyApp.start();
-      HockeyApp.checkForUpdate(); // optional
+  componentWillMount () {
+    HockeyApp.configure('a89476c454944d389838875238ca328e', true)
   }
 
-  // componentWillMount()  {
-  //   TestFairy.begin("<a71e470e343d1d4f42222bff939ebca69a79bd69>");
-  // }
+  componentDidMount () {
+    HockeyApp.start()
+    HockeyApp.checkForUpdate() // optional
+  }
 
   render () {
     return <Screens />

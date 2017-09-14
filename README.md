@@ -1,4 +1,4 @@
-# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project #4: Project Name
+# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project #4: Glover
 
 Glover is a collision detection device + phone app that will notify your loved ones on your location when you're our cycling, skiing or even driving. The device should be attached somewhere that may sense the impact and this triggers your phone to send out an SMS to your designated emergency contact with your location and other health related details like blood type and allergies.
 
@@ -32,39 +32,44 @@ react-native run-android
 
 ## Live Version
 
-Deployed onto hockeyapp, link can shared by invitation
+Deployed onto hockeyapp, link can be shared by invitation
 
-### ERDs
-![alt text](./imgs/ERD.png?raw=true 'start')
+## ERD
+<img src="src/images/ERD.png">
 
-### User stories
+## Wireframe
+
+<img src="src/images/1Home.png" height="400"><img src="src/images/2CreateProfilePage.png" height="400"><img src="src/images/3Sensor.png" height="400"><img src="src/images/4NewSession.png" height="400"><img src="src/images/5ImpactDetected.png" height="400"><img src="src/images/6Setting.png" height="400">
+
+
+## User Stories
 * User should be able to register and log-in subsequently
 * Registration page will prompt users to key in health details and emergency contacts from phone
 * Logged-in users should be able to start session that will trigger pairing of bluetooth device for crash detection and turn on GPS for location sensing
 * Upon collision, app will start a 30 seconds countdown that users can dismiss if false-alarm triggered by a bump on the road or a minor accident.
-* If user is in a serious accident and is unable to dismiss the countdown, the app will then automatically send out a message to designated contacts with info on location and previously provided health details.
+* If user is in a serious accident and is unable to dismiss the countdown, the app will then automatically send out a message to designated contacts with information on location and previously provided health details.
 
-### Challenges
+
+## Challenges
+
 1. How to prompt user to pair bluetooth and switch on GPS upon 'start ride session'?
 2. Will locked phone disable sending SMS?
 3. Will app running in background continually sense location coordinate and receive bluetooth data?
 4. iOS doesn't seem to allow apps to send messages without prompting users to click 'send'
 
-### Future Plans
-1. Pairing of IOT! And deployment to playstore
+## Future Plans
+
+1. Pairing of IOT! And deployment to Play Store
 2. Live-tracking of location & time to enable live updates to emergency contacts even without crash event. This will also enable app to double up as a 'run-keeper' for cyclists, skiiers, motorists or even joggers.
-3. Implmentation of accelerometer for increased accuracy
+3. Implementation of accelerometer for increased accuracy
 4. 'Forget Password' feature
 5. Provide settings page to enable users to amend emergency contact details, personal details like allergies, health status
-
-### Bugs
-* Keyboard is blocking login / register page (android)
-* needs double click to close drawer
 
 ## Authors
 
 * **Wan Zhen** - [thecodingdog](https://github.com/thecodingdog)
 * **Shumin** - [shumin13](https://github.com/shumin13)
+
 
 ## Acknowledgments
 

@@ -15,6 +15,9 @@ import com.facebook.soloader.SoLoader;
 import com.slowpath.hockeyapp.RNHockeyAppModule;
 import com.slowpath.hockeyapp.RNHockeyAppPackage;
 
+import com.slowpath.hockeyapp.RNHockeyAppModule;
+import com.slowpath.hockeyapp.RNHockeyAppPackage;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -30,11 +33,10 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
             new RNHockeyAppPackage(MainApplication.this),
-            new MainReactPackage(),
-            new TestFairyPackage(),
-            new VectorIconsPackage(),
             new RNSmsAndroidPackage(),
-            new MapsPackage()
+            new MainReactPackage(),
+            new MapsPackage(),
+            new VectorIconsPackage()
       );
     }
   };

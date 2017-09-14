@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Text, View, Image, KeyboardAvoidingView, TextInput, TouchableOpacity, StatusBar } from 'react-native'
+import { Text, View, Image, TextInput, TouchableOpacity, StatusBar } from 'react-native'
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import styles from '../styles/styles.js'
 import firebase from '../Firebase/firebase'
 
@@ -14,7 +15,7 @@ export default class Login extends Component {
 
   _auth () {
     firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
-    .then(() => this.props.navigation.navigate('Session'))
+    .then(() => this.props.navigation.navigate('sessionWDrawer'))
     .catch(function (error) {
       alert(error.message)
     })
@@ -23,14 +24,17 @@ export default class Login extends Component {
   render () {
     const { navigate } = this.props.navigation
     return (
-      <KeyboardAvoidingView behavior='padding' style={styles.container}>
-        <View style={styles.container}>
+      <KeyboardAwareScrollView
+        style={{ backgroundColor: '#6ed3cf' }}
+        resetScrollToCoords={{ x: 0, y: 0 }}
+        contentContainerStyle={styles.container}
+        scrollEnabled={false}>
           <StatusBar barStyle='light-content' />
 
           <View style={styles.logoContainer}>
             <Image source={require('../../images/logo.gif')} style={styles.logo} />
             <Text style={styles.title}>
-              Project Title
+              Glover
             </Text>
           </View>
 
@@ -67,8 +71,7 @@ export default class Login extends Component {
 
           </View>
 
-        </View>
-      </KeyboardAvoidingView>
+      </KeyboardAwareScrollView>
     )
   }
 }

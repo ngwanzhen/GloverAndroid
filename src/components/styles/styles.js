@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet, Dimensions } from 'react-native'
 
 module.exports = StyleSheet.create({
   container: {
@@ -16,7 +16,7 @@ module.exports = StyleSheet.create({
     height: 120
   },
   title: {
-    fontSize: 20,
+    fontSize: 30,
     fontWeight: '700',
     marginVertical: 20
   },
@@ -93,9 +93,9 @@ module.exports = StyleSheet.create({
     justifyContent: 'center'
   },
   impactTimer: {
-    width: 200,
-    height: 200,
-    borderRadius: 200/2,
+    width: 180,
+    height: 180,
+    borderRadius: 180/2,
     backgroundColor: 'white',
     overflow: 'hidden',
     alignItems: 'center',
@@ -104,10 +104,38 @@ module.exports = StyleSheet.create({
   impactTitle: {
     fontSize: 30,
     fontWeight: '700',
-    marginVertical: 20
+    marginVertical: 50
   },
   impactText: {
     fontSize: 80,
     fontWeight: '700'
+  },
+  profileContainer: {
+    flex: 1,
+    backgroundColor: '#131111',
+    alignItems: 'center'
+  },
+  mapContainer: {
+    flex: 1,
+    height: 300,
+    width: 400
+  },
+  map: {
+    ...StyleSheet.absoluteFillObject
+  },
+  ambulanceLogo: {
+    width: 300,
+    height: 250
+  },
+  titleBar: {
+    backgroundColor: '#9A031E',
+    paddingLeft: 10,
+    fontSize: 16,
+    color: 'white',
+    fontWeight: '700',
+    textAlign: 'left',
+    textAlignVertical: 'center',
+    height: 23,
+    width: Dimensions.get('window').width
   }
 })
