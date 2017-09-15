@@ -3,7 +3,8 @@ package com.androidtest;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
-import com.testfairy.react.TestFairyPackage;
+import com.remobile.toast.RCTToastPackage;
+import com.rusel.RCTBluetoothSerial.RCTBluetoothSerialPackage;
 import com.rhaker.reactnativesmsandroid.RNSmsAndroidPackage;
 import com.airbnb.android.react.maps.MapsPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
@@ -33,8 +34,10 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
             new RNHockeyAppPackage(MainApplication.this),
+            new RCTBluetoothSerialPackage(),
             new RNSmsAndroidPackage(),
             new MainReactPackage(),
+            new RCTToastPackage(),
             new MapsPackage(),
             new VectorIconsPackage()
       );
