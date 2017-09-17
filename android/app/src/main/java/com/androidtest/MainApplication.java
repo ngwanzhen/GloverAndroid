@@ -3,6 +3,7 @@ package com.androidtest;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.rusel.RCTBluetoothSerial.RCTBluetoothSerialPackage;
 import com.airbnb.android.react.maps.MapsPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.facebook.react.ReactNativeHost;
@@ -32,8 +33,9 @@ public class MainApplication extends Application implements ReactApplication {
           new RNHockeyAppPackage(MainApplication.this),
           new RNSmsAndroidPackage(),
           new MainReactPackage(),
-            new MapsPackage(),
-            new VectorIconsPackage()
+          new RCTBluetoothSerialPackage(),
+          new MapsPackage(),
+          new VectorIconsPackage()
       );
     }
   };
