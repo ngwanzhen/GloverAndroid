@@ -11,6 +11,12 @@ export default class Impact extends Component {
     }
   }
 
+  goBack () {
+    const { navigation } = this.props
+    navigation.goBack()
+    navigation.state.params.onSelect({ crash: false })
+  }
+
   componentDidMount () {
     this.timer = setInterval(
       () => {
@@ -25,7 +31,7 @@ export default class Impact extends Component {
   componentDidUpdate () {
     if (this.state.value === true) {
       clearInterval(this.timer)
-      this.props.navigation.goBack()
+      this.goBack()
     } else if (this.state.seconds === 0) {
       this.props.navigation.navigate('profileWDrawer')
     }
