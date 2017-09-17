@@ -15,6 +15,7 @@ import styles from '../styles/styles.js'
 import DrawerButton from '../DrawerButton'
 import Toast from '@remobile/react-native-toast'
 import BluetoothSerial from 'react-native-bluetooth-serial'
+import Impact from './Impact'
 
 const DeviceList = ({ devices, connectedId, showConnectedIcon, onDevicePress }) =>
   <ScrollView style={styles.container}>
@@ -56,7 +57,8 @@ export default class Session extends Component {
       devices: [],
       unpairedDevices: [],
       connected: false,
-      section: 0
+      section: 0,
+      crash: false
     }
   }
 
@@ -113,6 +115,7 @@ export default class Session extends Component {
     .then((data) => {
       if (data) {
         Toast.showShortBottom(data)
+        this.setState({crash: true})
         // this.props.navigation('Impact')
       }
     })
@@ -129,8 +132,8 @@ export default class Session extends Component {
     let content = this.state.value ? 'End This Session?' : 'Start New Session?'
     let bangDisplay = this.state.value ? 'flex' : 'none'
 
-    return (
-      <View style={containerStyle}>
+    let show = this.state.crash ?  <Impact navigation={this.props.navigation}/> :
+    <View style={containerStyle}>
         <StatusBar barStyle='dark-content' />
         <DrawerButton onPress={() => navigate('DrawerOpen')} />
 
@@ -158,9 +161,14 @@ export default class Session extends Component {
 
         <TouchableOpacity
           style={{ zIndex: 1, display: bangDisplay }}
-          onPress={() => navigate('Impact')}>
+          onPress={() => this.setState({crash: true})}>
           <Text style={styles.bangText}>   BANG!</Text>
         </TouchableOpacity>
+        </View>
+
+    return (
+      <View style={styles.impactContainer}>
+        {show}
       </View>
     )
   }
