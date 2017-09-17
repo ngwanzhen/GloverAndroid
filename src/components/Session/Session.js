@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import { Text, View, Image, StatusBar, Switch, TouchableOpacity } from 'react-native'
+import { Text, View, Image, StatusBar, Switch, TouchableOpacity, BackHandler } from 'react-native'
 import styles from '../styles/styles.js'
 import DrawerButton from '../DrawerButton'
 import BluetoothSerial from 'react-native-bluetooth-serial'
+import LocationServicesDialogBox from "react-native-android-location-services-dialog-box"
 
 // device info
 const device = {
@@ -59,6 +60,21 @@ export default class Session extends Component {
   }
 
   componentDidMount () {
+    LocationServicesDialogBox.checkLocationServicesIsEnabled({
+    message: "<h2>Location</h2>Please turn on Location Services.<br/>",
+    ok: "Got it",
+    cancel: "",
+    enableHighAccuracy: false,
+    showDialog: true
+    }).then(function(success) {
+    }).catch((error) => {
+      alert(error.message)
+    })
+
+    BackHandler.addEventListener('hardwareBackPress', () => {
+      LocationServicesDialogBox.forceCloseDialog()
+    })
+
     Promise.all([BluetoothSerial.isEnabled(), BluetoothSerial.list()])
     .then((values) => {
       const [isEnabled, devices] = values
@@ -81,8 +97,8 @@ export default class Session extends Component {
     let containerStyle = this.state.value ? styles.endSessionContainer : styles.startSessionContainer
     let bgImage = this.state.value ? require('../../images/cyclist.gif') : require('../../images/bicycle.gif')
     let content = this.state.value ? 'End This Session?' : 'Start New Session?'
-    // let bangDisplay = this.state.value ? 'flex' : 'none'
     let switchDisplay = this.state.connected ? 'flex' : 'none'
+    // let bangDisplay = this.state.value ? 'flex' : 'none'
 
     return (
       <View style={containerStyle}>
