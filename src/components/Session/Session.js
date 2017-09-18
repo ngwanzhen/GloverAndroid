@@ -7,8 +7,8 @@ import LocationServicesDialogBox from "react-native-android-location-services-di
 
 // device info
 const device = {
-  name: 'HC-06',
-  id: '98:D3:31:FD:68:8E'
+  name: 'HC-05',
+  id: '20:16:05:24:58:27'
 }
 
 export default class Session extends Component {
@@ -131,4 +131,3 @@ export default class Session extends Component {
     )
   }
 }
-
