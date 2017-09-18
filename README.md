@@ -1,6 +1,6 @@
 # ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project #4: Glover
 
-Glover is a collision detection device + phone app that will notify your loved ones on your location when you're out cycling, skiing or even driving. The device should be attached somewhere that may sense the impact and this triggers your phone to send out an SMS to your designated emergency contact with your location and other health related details like blood type and allergies.
+Glover is a collision detection device + phone app that will notify your loved ones on your location when you're our cycling, skiing or even driving. The device should be attached somewhere that may sense the impact and this triggers your phone to send out an SMS to your designated emergency contact with your location and other health related details like blood type and allergies.
 
 This project makes use of:
 
@@ -18,9 +18,7 @@ Software
 * Native geolocation
 * Communications library to send SMS
 
-
 ## Getting Started
-
 To see a working version of the mobile app, you will need
 * Android Studio + emulator
 * xCode for iphone
@@ -32,16 +30,12 @@ To see a working version of the mobile app, you will need
 react-native run-ios OR
 react-native run-android
 
-
 ## Live Version
 
 Deployed onto hockeyapp, link can be shared by invitation
 
-
 ## ERD
-
 <img src="src/images/ERD.png">
-
 
 ## Wireframe
 
@@ -54,7 +48,6 @@ Deployed onto hockeyapp, link can be shared by invitation
 <img src="src/images/sensor.jpg" height="400">
 
 ## User Stories
-
 * User should be able to register and log-in subsequently
 * Registration page will prompt users to key in health details and emergency contacts from phone
 * Logged-in users should be able to start session that will trigger pairing of bluetooth device for crash detection and turn on GPS for location sensing
@@ -69,7 +62,6 @@ Deployed onto hockeyapp, link can be shared by invitation
 3. Will app running in background continually sense location coordinate and receive bluetooth data?
 4. iOS doesn't seem to allow apps to send messages without prompting users to click 'send'
 
-
 ## Future Plans
 
 1. Pairing of IOT! And deployment to Play Store
@@ -77,7 +69,6 @@ Deployed onto hockeyapp, link can be shared by invitation
 3. Implementation of accelerometer for increased accuracy
 4. 'Forget Password' feature
 5. Provide settings page to enable users to amend emergency contact details, personal details like allergies, health status
-
 
 ## Authors
 

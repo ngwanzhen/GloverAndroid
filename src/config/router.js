@@ -28,20 +28,23 @@ const profileWDrawer = DrawerNavigator({
   })
 
 export const Screens = StackNavigator({
-  Login: {
-    screen: Login
-  },
-  sessionWDrawer: {
-    screen: sessionWDrawer
-  },
-  Register: {
-    screen: Register
-  },
-  CreateProfile: {
-    screen: CreateProfile
-  },
-  Impact: {
-    screen: Impact
+  // Login: {
+  //   screen: Login
+  // },
+  // sessionWDrawer: {
+  //   screen: sessionWDrawer
+  // },
+  // Register: {
+  //   screen: Register
+  // },
+  // CreateProfile: {
+  //   screen: CreateProfile
+  // },
+  // Impact: {
+  //   screen: Impact
+  // },
+  Session: {
+    screen: Session
   },
   profileWDrawer: {
     screen: profileWDrawer
