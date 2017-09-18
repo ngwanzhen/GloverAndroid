@@ -133,8 +133,9 @@ android {
 }
 
 dependencies {
-    compile project(':@remobile/react-native-toast')
+    compile project(':react-native-android-location-services-dialog-box')
     compile project(':react-native-bluetooth-serial')
+    compile project(':react-native-maps')
     compile project(':react-native-vector-icons')
     compile project(':react-native-sms-android')
     compile project(':react-native-maps')

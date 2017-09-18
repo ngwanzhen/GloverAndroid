@@ -3,7 +3,7 @@ package com.androidtest;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
-import com.remobile.toast.RCTToastPackage;
+import com.showlocationservicesdialogbox.LocationServicesDialogBoxPackage;
 import com.rusel.RCTBluetoothSerial.RCTBluetoothSerialPackage;
 import com.rhaker.reactnativesmsandroid.RNSmsAndroidPackage;
 import com.airbnb.android.react.maps.MapsPackage;
@@ -33,13 +33,13 @@ public class MainApplication extends Application implements ReactApplication {
     @Override
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
-            new RNHockeyAppPackage(MainApplication.this),
-            new RCTBluetoothSerialPackage(),
-            new RNSmsAndroidPackage(),
-            new MainReactPackage(),
-            new RCTToastPackage(),
-            new MapsPackage(),
-            new VectorIconsPackage()
+          new RNHockeyAppPackage(MainApplication.this),
+          new RNSmsAndroidPackage(),
+          new MainReactPackage(),
+          new LocationServicesDialogBoxPackage(),
+          new RCTBluetoothSerialPackage(),
+          new MapsPackage(),
+          new VectorIconsPackage()
       );
     }
   };

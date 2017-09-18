@@ -39,8 +39,13 @@ Deployed onto hockeyapp, link can be shared by invitation
 
 ## Wireframe
 
-<img src="src/images/1Home.png" height="400"><img src="src/images/2CreateProfilePage.png" height="400"><img src="src/images/3Sensor.png" height="400"><img src="src/images/4NewSession.png" height="400"><img src="src/images/5ImpactDetected.png" height="400"><img src="src/images/6Setting.png" height="400">
+<img src="src/images/1Home.png" height="400"><img src="src/images/2CreateProfilePage.png" height="400"><img src="src/images/3Sensor.png" height="400"><br>
+<img src="src/images/4NewSession.png" height="400"><img src="src/images/5ImpactDetected.png" height="400"><img src="src/images/6Setting.png" height="400">
 
+
+## IOT
+
+<img src="src/images/sensor.jpg" height="400">
 
 ## User Stories
 * User should be able to register and log-in subsequently
