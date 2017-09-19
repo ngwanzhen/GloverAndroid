@@ -11,6 +11,11 @@ const device = {
   id: '20:16:05:24:58:27'
 }
 
+// const device = {
+//   name: 'HC-05',
+//   id: '20:16:05:24:58:27'
+// }
+
 export default class Session extends Component {
   constructor (props) {
     super(props)
@@ -88,7 +93,7 @@ export default class Session extends Component {
     })
     this.connect()
     setInterval(() => {
-      this.readData(), 200
+      this.readData(), 1000
     })
   }
 

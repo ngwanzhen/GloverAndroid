@@ -49,37 +49,33 @@ export default class Profile extends Component {
   }
 
   componentDidMount () {
-    firebase.auth().onAuthStateChanged(user => {
-      if (user) {
-        let uid = firebase.auth().currentUser.uid
-        let rootRef = firebase.database().ref(`users/${uid}`)
-        rootRef.once('value').then(snapshot => {
+    let uid = firebase.auth().currentUser.uid
+    let rootRef = firebase.database().ref(`users/${uid}`)
+    rootRef.once('value').then(snapshot => {
+      this.setState({
+        userDetails: {
+          name: snapshot.val().name,
+          bloodType: snapshot.val().bloodType,
+          allergy: snapshot.val().allergy,
+          emergencyContactName: snapshot.val().emergencyContactName,
+          emergencyContactNumber: snapshot.val().emergencyContactNumber
+        }
+      })
+      navigator.geolocation.getCurrentPosition(
+        position => {
           this.setState({
-            userDetails: {
-              name: snapshot.val().name,
-              bloodType: snapshot.val().bloodType,
-              allergy: snapshot.val().allergy,
-              emergencyContactName: snapshot.val().emergencyContactName,
-              emergencyContactNumber: snapshot.val().emergencyContactNumber
+            region: {
+              latitude: position.coords.latitude,
+              longitude: position.coords.longitude,
+              latitudeDelta: LATITUDE_DELTA,
+              longitudeDelta: LONGITUDE_DELTA
             }
           })
-          navigator.geolocation.getCurrentPosition(
-            position => {
-              this.setState({
-                region: {
-                  latitude: position.coords.latitude,
-                  longitude: position.coords.longitude,
-                  latitudeDelta: LATITUDE_DELTA,
-                  longitudeDelta: LONGITUDE_DELTA
-                }
-              })
-              this.message(this.state.region.latitude, this.state.region.longitude)
-            },
-            (error) => alert(error.message),
-            { enableHighAccuracy: false, timeout: 1000 }
-          )
-        })
-      }
+          this.message(this.state.region.latitude, this.state.region.longitude)
+        },
+        (error) => alert(error.message),
+        { enableHighAccuracy: false, timeout: 1000 }
+      )
     })
   }
 
