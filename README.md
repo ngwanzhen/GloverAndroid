@@ -1,6 +1,6 @@
 # ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project #4: Glover (Android)
 
-Glover is a collision detection device and phone application that will notify your loved ones on your location when you are out cycling, skiing or even driving. The device should be attached somewhere that may sense the impact and this triggers your phone to send out an SMS to your designated emergency contact with your location and other health related details like blood type and allergies.
+Glover is a collision detection device and phone application. Upon device detecting impact, connected mobile phone will send SMS with information on your current location and health status to your pre-set emergency contacts.
 
 This project makes use of:
 
@@ -46,6 +46,7 @@ To see a working version of the phone app, you will need to
 
 <img src="src/images/sensor.jpg" height="400">
 
+
 ## User Stories
 
 * User should be able to register and log-in subsequently.
@@ -79,7 +80,7 @@ To see a working version of the phone app, you will need to
 
 ## Acknowledgments
 
-* To enable direct SMS (not just re-direct you to the SMS function with pre-filled msg)
+* To enable direct SMS (not just re-direct you to the SMS function with pre-filled message)
 https://github.com/rhaker/react-native-sms-android
 
 * React-navigation that gives you the router and nav bar
