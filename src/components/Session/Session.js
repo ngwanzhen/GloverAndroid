@@ -93,7 +93,7 @@ export default class Session extends Component {
     })
     this.connect()
     setInterval(() => {
-      this.readData(), 200
+      this.readData(), 1000
     })
   }
 
