@@ -13,6 +13,7 @@ Hardware
 
 Software
 * React Native
+* Firebase
 * Bluetooth library to pair with hardware
 * GPS library
 * Native geolocation
@@ -21,13 +22,13 @@ Software
 
 ## Getting Started
 
-To see a working version of the phone app, you will need
+To see a working version of the phone app, you will need to
 
 1. Go to [React Native documentations](https://facebook.github.io/react-native/docs/getting-started.html)
-2. Click on 'Building Projects with Native Code' (Note: Target OS: Android)
+2. Click on 'Building Projects with Native Code' (Target OS: Android)
 3. Install dependencies
 4. Clone this repo
-5. Run ```yarn install``` and ```react-native run-android``` inside your React Native project folder
+5. Run ```yarn install``` and ```react-native run-android```
 
 
 ## ERD
@@ -47,11 +48,11 @@ To see a working version of the phone app, you will need
 
 ## User Stories
 
-* User should be able to register and log-in subsequently
-* Registration page will prompt user to key in health-related details and emergency contact
-* Logged-in user should be able to start session that will trigger pairing of bluetooth device for crash detection and GPS for location sensing
+* User should be able to register and log-in subsequently.
+* Registration page will prompt user to key in health-related details and emergency contact.
+* Logged-in user should be able to start session that will trigger pairing of bluetooth device for crash detection and turn on GPS for location sensing.
 * Upon collision, app will start a 10 seconds countdown that user can dismiss if false-alarm triggered by a bump on the road or a minor accident.
-* If user is in a serious accident and is unable to dismiss the countdown, the app will then automatically send out a message to designated contact with information on location and previously provided health details.
+* If user is in a serious accident and is unable to dismiss the countdown, the app will then automatically send out a SMS with information on user's current location and health status to user's pre-set emergency contacts.
 
 
 ## Challenges
@@ -64,7 +65,7 @@ To see a working version of the phone app, you will need
 ## Future Plans
 
 1. Deployment to Play Store
-2. Live-tracking of location & time to enable live updates to emergency contacts even without crash event. This will enable app to double up as a 'run-keeper' for cyclists, skiers, motorists or even joggers.
+2. Live-tracking of location and time to enable live updates to emergency contacts even without crash event. This will enable app to double up as a 'run-keeper' for cyclists, skiers, motorists or even joggers.
 3. Implementation of accelerometer for increased accuracy
 4. 'Forget Password' feature
 5. Provide settings page to enable users to amend details such as emergency contact, allergies and health status

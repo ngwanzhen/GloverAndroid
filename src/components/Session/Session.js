@@ -11,6 +11,11 @@ const device = {
   id: '98:D3:31:FD:68:8E'
 }
 
+// const device = {
+//   name: 'HC-05',
+//   id: '20:16:05:24:58:27'
+// }
+
 export default class Session extends Component {
   constructor (props) {
     super(props)
