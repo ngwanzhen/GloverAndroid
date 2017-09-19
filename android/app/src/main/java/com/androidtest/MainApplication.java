@@ -5,6 +5,7 @@ import android.app.Application;
 import com.facebook.react.ReactApplication;
 import com.showlocationservicesdialogbox.LocationServicesDialogBoxPackage;
 import com.rusel.RCTBluetoothSerial.RCTBluetoothSerialPackage;
+import com.rhaker.reactnativesmsandroid.RNSmsAndroidPackage;
 import com.airbnb.android.react.maps.MapsPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.facebook.react.ReactNativeHost;
@@ -12,7 +13,8 @@ import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
 
-import com.rhaker.reactnativesmsandroid.RNSmsAndroidPackage;
+import com.slowpath.hockeyapp.RNHockeyAppModule;
+import com.slowpath.hockeyapp.RNHockeyAppPackage;
 
 import com.slowpath.hockeyapp.RNHockeyAppModule;
 import com.slowpath.hockeyapp.RNHockeyAppPackage;
@@ -34,7 +36,7 @@ public class MainApplication extends Application implements ReactApplication {
           new RNHockeyAppPackage(MainApplication.this),
           new RNSmsAndroidPackage(),
           new MainReactPackage(),
-            new LocationServicesDialogBoxPackage(),
+          new LocationServicesDialogBoxPackage(),
           new RCTBluetoothSerialPackage(),
           new MapsPackage(),
           new VectorIconsPackage()

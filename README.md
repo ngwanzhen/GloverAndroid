@@ -19,7 +19,6 @@ Software
 * Native geolocation
 * Communications library to send SMS
 
-
 ## Getting Started
 
 To see a working version of the phone app, you will need to
@@ -32,9 +31,7 @@ To see a working version of the phone app, you will need to
 
 
 ## ERD
-
 <img src="src/images/ERD.png">
-
 
 ## Wireframe
 
@@ -62,7 +59,6 @@ To see a working version of the phone app, you will need to
 2. Will app running in background continually receive bluetooth data?
 3. iOS doe not allow apps to send messages without prompting user to click 'send'
 
-
 ## Future Plans
 
 1. Deployment to Play Store
@@ -70,7 +66,6 @@ To see a working version of the phone app, you will need to
 3. Implementation of accelerometer for increased accuracy
 4. 'Forget Password' feature
 5. Provide settings page to enable users to amend details such as emergency contact, allergies and health status
-
 
 ## Authors
 

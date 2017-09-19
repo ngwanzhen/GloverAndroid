@@ -5,6 +5,7 @@ import styles from '../styles/styles.js'
 export default class Impact extends Component {
   constructor (props) {
     super(props)
+    this.componentDidUpdate = this.componentDidUpdate.bind(this)
     this.state = {
       seconds: 10,
       value: false

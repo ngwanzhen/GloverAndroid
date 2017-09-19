@@ -43,6 +43,9 @@ export const Screens = StackNavigator({
   Impact: {
     screen: Impact
   },
+  Session: {
+    screen: Session
+  },
   profileWDrawer: {
     screen: profileWDrawer
   }

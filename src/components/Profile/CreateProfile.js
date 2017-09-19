@@ -78,7 +78,6 @@ export default class CreateProfile extends Component {
   render () {
     var Form = t.form.Form
     return (
-
       <KeyboardAwareScrollView
         style={{ backgroundColor: '#6ed3cf' }}
         resetScrollToCoords={{ x: 0, y: 0 }}
