@@ -31,14 +31,14 @@ export const Screens = StackNavigator({
   Login: {
     screen: Login
   },
-  sessionWDrawer: {
-    screen: sessionWDrawer
-  },
   Register: {
     screen: Register
   },
   CreateProfile: {
     screen: CreateProfile
+  },
+  sessionWDrawer: {
+    screen: sessionWDrawer
   },
   Impact: {
     screen: Impact

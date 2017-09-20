@@ -29,6 +29,10 @@ export default class Impact extends Component {
     )
   }
 
+  componentWillUnmount () {
+    clearInterval(this.timer)
+  }
+
   componentDidUpdate () {
     if (this.state.value === true) {
       clearInterval(this.timer)
